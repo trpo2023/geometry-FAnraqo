@@ -21,7 +21,7 @@ typedef struct figure figure;
 int main()
 {
     ifstream f;
-    string file = "test_true";
+    string file = "test";
     f.open(file);
 
     int k = 0;
