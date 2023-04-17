@@ -7,29 +7,27 @@
 #include <cmath>
 #define _USE_MATH_DEFINES
 
-using namespace std;
-
-int check_of_digit(string temp, int tmp)
+int check_of_digit(std::string temp, int tmp)
 {
     while (temp[tmp] >= '0' && temp[tmp] <= '9')
         tmp++;
     return tmp;
 }
 
-void error_pointer(string temp, int tmp)
+void error_pointer(std::string temp, int tmp)
 {
-    cout << temp << endl;
+    std::cout << temp << std::endl;
         for (int i = 0; i < tmp; i++)
             printf(" ");
 }
 
-int checking_for_errors(string temp)
+int checking_for_errors(std::string temp)
 {
-    string figur;
+    std::string figur;
     figur.insert(0, temp, 0, 7);
 
     if (figur != "circle("){
-        cout << temp << endl;
+        std::cout << temp << std::endl;
         printf("^\nError at column 0: expected 'circle'\n\n");
         return 1;
     }
@@ -108,7 +106,7 @@ int checking_for_errors(string temp)
     return 0;
 }
 
-void filling_in_structure(string temp, float *x, float *y, float *r)
+void filling_in_structure(std::string temp, float *x, float *y, float *r)
 {
     int tmp = 7;
 
@@ -204,7 +202,7 @@ void overlay(
     float *xi, 
     float *yi, 
     float *ri, 
-    string *intersects, 
+    std::string *intersects, 
     float *xj, 
     float *yj, 
     float *rj, 
@@ -212,7 +210,7 @@ void overlay(
 {
     if (pow(*ri - *rj, 2) <= pow(*xi - *xj, 2) + pow(*yi - *yj, 2) &&
         pow(*xi - *xj, 2) + pow(*yi - *yj, 2) <= pow(*ri + *rj, 2))
-        *intersects = *intersects + to_string(j + 1) + " circle ";
+        *intersects = *intersects + std::to_string(j + 1) + " circle ";
 }
 
 void print_structure(
@@ -221,35 +219,35 @@ void print_structure(
     float *r, 
     float *perimeter, 
     float *area, 
-    string *intersects, 
+    std::string *intersects, 
     int i)
 {
-    cout << i + 1 << ". circle(" << *x << ' ' 
-         << *y << ", " << *r << ')' << endl << 
-            "\tperimeter = " << *perimeter << endl <<
-            "\tarea = " << *area << endl << 
-            "\tintersects:" << endl;
+    std::cout << i + 1 << ". circle(" << *x << ' ' 
+              << *y << ", " << *r << ')' << std::endl << 
+                "\tperimeter = " << *perimeter << std::endl <<
+                "\tarea = " << *area << std::endl << 
+                "\tintersects:" << std::endl;
     
-    string temp = *intersects;
+    std::string temp = *intersects;
     int tmp = 0;
 
     while (tmp < (int)temp.length())
     {
         if (temp[tmp] >= '0' && temp[tmp] <= '9'){
-            cout << "\t   " << temp[tmp];
+            std::cout << "\t   " << temp[tmp];
             tmp ++;
         }
         if (temp[tmp] == ' '){
-            cout << ' ';
+            std::cout << ' ';
             tmp ++;
         }
         while ((temp[tmp] >= 'A' && temp[tmp] <= 'Z')
             || (temp[tmp] >= 'a' && temp[tmp] <= 'z'))
         {
-            cout << temp[tmp];
+            std::cout << temp[tmp];
             tmp ++;
         }
-        cout << endl;
+        std::cout << std::endl;
         tmp ++;
     }
 }

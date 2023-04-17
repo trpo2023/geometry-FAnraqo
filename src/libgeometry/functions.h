@@ -4,16 +4,14 @@
 #include <stdio.h>
 #include <string>
 
-using namespace std;
-
-int checking_for_errors(string temp);
-void filling_in_structure(string temp, float* x, float* y, float* r);
+int checking_for_errors(std::string temp);
+void filling_in_structure(std::string temp, float* x, float* y, float* r);
 void calculation(float* r, float* perimeter, float* area);
 void overlay(
         float* xi,
         float* yi,
         float* ri,
-        string* intersects,
+        std::string* intersects,
         float* xj,
         float* yj,
         float* rj,
@@ -24,5 +22,5 @@ void print_structure(
         float* r,
         float* perimeter,
         float* area,
-        string* intersects,
+        std::string* intersects,
         int i);

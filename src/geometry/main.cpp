@@ -5,8 +5,6 @@
 #include <fstream>
 #include <string>
 
-using namespace std;
-
 struct figure
 {
     float x = 0;
@@ -14,14 +12,14 @@ struct figure
     float r = 0;
     float perimeter = 0;
     float area = 0;
-    string intersects;
+    std::string intersects;
 };
 typedef struct figure figure;
 
 int main()
 {
-    ifstream f;
-    string file = "test";
+    std::ifstream f;
+    std::string file = "test";
     f.open(file);
 
     int k = 0;
@@ -29,13 +27,13 @@ int main()
 
     if (!f.is_open())
     {
-        cout << "Файл не открыт" << endl;
+        std::cout << "Файл не открыт" << std::endl;
         return 0;
     } 
     else
         while (!f.eof())
         {
-            string temp;
+            std::string temp;
             getline(f, temp);
             if (checking_for_errors(temp) != 0) flag = 1;
             k ++;
@@ -58,13 +56,13 @@ int main()
     f.open(file);
     if (!f.is_open())
     {
-        cout << "Файл не открыт" << endl;
+        std::cout << "Файл не открыт" << std::endl;
         return 0;
     } 
     else
         while (!f.eof())
         {
-            string temp;
+            std::string temp;
             getline(f, temp);
             filling_in_structure(temp, &fgr[k].x, &fgr[k].y, &fgr[k].r);
             k ++;
