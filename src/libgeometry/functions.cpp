@@ -194,8 +194,8 @@ void filling_in_structure(std::string temp, float *x, float *y, float *r)
 
 void calculation(float *r, float *perimeter, float *area)
 {
-    *perimeter = *r * 2 * 3.14;
-    *area = (float)M_PI * pow(*r, 2);
+    *perimeter = *r * 2 * M_PI;
+    *area = M_PI * pow(*r, 2);
 }
 
 void overlay(
