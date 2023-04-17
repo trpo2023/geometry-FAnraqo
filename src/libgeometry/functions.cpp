@@ -108,7 +108,7 @@ int checking_for_errors(string temp)
     return 0;
 }
 
-void filling_in_structure(string temp, float *x, float *y, float *r, int k)
+void filling_in_structure(string temp, float *x, float *y, float *r)
 {
     int tmp = 7;
 
@@ -194,22 +194,38 @@ void filling_in_structure(string temp, float *x, float *y, float *r, int k)
     }
 }
 
-void calculation(float *x, float *y, float *r, float *perimeter, float *area, int k)
+void calculation(float *r, float *perimeter, float *area)
 {
     *perimeter = *r * 2 * 3.14;
     *area = (float)M_PI * pow(*r, 2);
 }
 
-void overlay(float *xi, float *yi, float *ri, string *intersects, float *xj, float *yj, float *rj, int j)
+void overlay(
+    float *xi, 
+    float *yi, 
+    float *ri, 
+    string *intersects, 
+    float *xj, 
+    float *yj, 
+    float *rj, 
+    int j)
 {
     if (pow(*ri - *rj, 2) <= pow(*xi - *xj, 2) + pow(*yi - *yj, 2) &&
         pow(*xi - *xj, 2) + pow(*yi - *yj, 2) <= pow(*ri + *rj, 2))
-        *intersects = *intersects + to_string(j) + " circle ";
+        *intersects = *intersects + to_string(j + 1) + " circle ";
 }
 
-void print_structure(float *x, float *y, float *r, float *perimeter, float *area, string *intersects, int i)
+void print_structure(
+    float *x, 
+    float *y, 
+    float *r, 
+    float *perimeter, 
+    float *area, 
+    string *intersects, 
+    int i)
 {
-    cout << i + 1 << ". circle(" << *x << ' ' << *y << ", " << *r << ')' << endl << 
+    cout << i + 1 << ". circle(" << *x << ' ' 
+         << *y << ", " << *r << ')' << endl << 
             "\tperimeter = " << *perimeter << endl <<
             "\tarea = " << *area << endl << 
             "\tintersects:" << endl;
