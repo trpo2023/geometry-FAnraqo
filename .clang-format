@@ -51,7 +51,7 @@ ExperimentalAutoDetectBinPacking: false
 FixNamespaceComments: false
 IncludeBlocks:   Preserve
 IndentCaseLabels: false
-IndentPPDirectives: Nones
+IndentPPDirectives: None
 IndentWidth:     4
 IndentWrappedFunctionNames: false
 KeepEmptyLinesAtTheStartOfBlocks: false
