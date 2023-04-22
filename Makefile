@@ -1,5 +1,5 @@
 APP_NAME = geometry
-TEST_NAME = test
+TEST_NAME = testing
 LIB_NAME = libgeometry
 
 CC = g++
