@@ -51,7 +51,7 @@ ExperimentalAutoDetectBinPacking: false
 FixNamespaceComments: false
 IncludeBlocks:   Preserve
 IndentCaseLabels: false
-IndentPPDirectives: None
+IndentPPDirectives: Nones
 IndentWidth:     4
 IndentWrappedFunctionNames: false
 KeepEmptyLinesAtTheStartOfBlocks: false
@@ -83,4 +83,3 @@ Standard:        Cpp11
 TabWidth:        8
 UseTab:          Never
 ...
-
