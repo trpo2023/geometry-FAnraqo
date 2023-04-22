@@ -1,4 +1,4 @@
 bin/geometry
-bin/test
+bin/testing
 *.o
 *.a
