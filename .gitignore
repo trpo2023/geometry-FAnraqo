@@ -1,4 +1,4 @@
-geo
-bin/a
+bin/geometry
+bin/test
 *.o
 *.a
