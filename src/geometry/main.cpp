@@ -19,7 +19,7 @@ typedef struct figure figure;
 int main()
 {
     std::ifstream f;
-    std::string file = "test";
+    std::string file = "test_values";
     f.open(file);
 
     int k = 0;
