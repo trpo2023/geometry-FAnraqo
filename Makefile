@@ -66,11 +66,6 @@ run: $(APP_RUN)
 .Geom: test_show
 test_show: $(TEST_CHECK)
 	$(TEST_CHECK)
-	
-.Geom: test
-test:
-	make test_comp
-	make test_show
 
 .Geom: start
 start:
