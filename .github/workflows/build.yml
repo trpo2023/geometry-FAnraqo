@@ -17,4 +17,4 @@ jobs:
 
       - name: Test application
         run: make test_comp
-             make test_show
+        run: make test_show
